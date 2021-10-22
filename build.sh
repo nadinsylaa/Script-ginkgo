@@ -13,7 +13,7 @@ export KBUILD_BUILD_HOST=Alk
 export KBUILD_BUILD_USER="Diyanto"
 
 # Build
-make O=out ARCH=arm64 ginkgo-perf_defconfig
+make O=out ARCH=arm64 vendor/ginkgo-perf_defconfig
 PATH="${PWD}/clang/bin:$PATH"
 make -j$(nproc --all) O=out ARCH=arm64 \
                       CC=clang \
