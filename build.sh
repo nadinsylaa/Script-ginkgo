@@ -3,17 +3,17 @@
 # Setting up build environment...
 apt-get install unzip p7zip-full curl python2 binutils-aarch64-linux-gnu wget binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi libncurses5 -yq
 # We download repo as zip file because it's faster than cloning it with git
-git clone --depth=1 https://github.com/kdrag0n/proton-clang clang
+git clone --depth=1 https://github.com/diyanto823/Ega-FebTC clang
 
 # Clone AnyKernel3
-git clone --depth=1 https://github.com/diyanto823/AnyKernel3 -b ginkgo
+git clone --depth=1 https://github.com/diyantoayy/AnyKernel3 -b merlin
 
 # Export
-export KBUILD_BUILD_HOST=Alk
+export KBUILD_BUILD_HOST=Ega
 export KBUILD_BUILD_USER="Diyanto"
 
 # Build
-make O=out ARCH=arm64 vendor/ginkgo-perf_defconfig
+make O=out ARCH=arm64 merlin-perf_defconfig
 PATH="${PWD}/clang/bin:$PATH"
 make -j$(nproc --all) O=out ARCH=arm64 \
                       CC=clang \
